@@ -1,5 +1,5 @@
 export default function Page() {
     return (
-        <h1>This is the landing page.</h1>
+        <h1>This is the skill NFTs for seekers.</h1>
     );
 }
