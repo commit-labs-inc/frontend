@@ -17,8 +17,9 @@ export function Content() {
         <span className="isolate inline-flex rounded-md shadow-sm mt-4 mb-6">
           <button
             type="button"
-            className="relative inline-flex font-mono items-center rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:bg-black focus:text-white focus:ring-black focus:z-10"
+            className="relative inline-flex font-mon items-center rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:bg-black focus:text-white focus:ring-black focus:z-10"
             onClick={() => onClickHandler("btn1")}
+            autoFocus
           >
             To Opportunity
           </button>
