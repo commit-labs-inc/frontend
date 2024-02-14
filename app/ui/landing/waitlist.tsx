@@ -1,18 +1,11 @@
 export function WaitList() {
   return (
-    <div className="flex">
-      <div className="w-[400px] border-[0.84px] border-solid border-black">
-        <input
-          className="font-mono text-black whitespace-nowrap bg-transparent w-full p-2"
-          type="email"
-          placeholder="Enter email to join the waitlist..."
-        />
-      </div>
-      <div className="bg-black border-[0.84px] border-solid border-black rounded-[0px_20.97px_20.97px_0px]">
+    <a href="https://forms.visme.co/formsPlayer/vdn10e9d-blog-subscription-form" target="_blank" rel="noopener noreferrer">
+      <div className="bg-black border-[0.84px] border-solid border-black rounded-full px-4">
         <button className="font-mono font-bold text-white whitespace-nowrap p-2">
-          Interesting !
+          Join our waitlist!
         </button>
       </div>
-    </div>
+  </a>
   );
 }
