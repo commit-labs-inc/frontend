@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { WaitList } from "@/app/ui/landing/waitlist";
 
 export function Content() {
@@ -40,7 +41,7 @@ export function Content() {
         </span>
 
         <div className="flex flex-col items-center justify-center px-12">
-          <img className="shadow-xl rounded-lg" src={imageMap[click as keyof typeof imageMap]} />
+          <Image alt="product_screenshot" className="shadow-xl rounded-lg" src={imageMap[click as keyof typeof imageMap]} />
           <div className="font-serif text-2xl mt-20">
             {contentMapLeft[click as keyof typeof contentMapLeft]}
           </div>
@@ -90,7 +91,7 @@ const contentMapRight = {
         trajectory of your career.
         <br />
         <br />
-        Whether you're stepping into the workforce for the first time, seeking a
+        Whether you are stepping into the workforce for the first time, seeking a
         significant career shift, or facing any other hurdles that have
         previously stood in your way, we are here to help!
       </div>
@@ -107,7 +108,7 @@ const contentMapRight = {
         <br />
         We recognize that in the fast-paced, ever-evolving world of business,
         having team members with up-to-date, industry-standard skills is not
-        just an advantage, it's a necessity.
+        just an advantage, it is a necessity.
         <br />
         <br />
         Now you can independently and easily confirm the skills of potential
