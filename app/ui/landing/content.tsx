@@ -41,7 +41,7 @@ export function Content() {
         </span>
 
         <div className="flex flex-col items-center justify-center px-12">
-          <Image alt="product_screenshot" className="shadow-xl rounded-lg" src={imageMap[click as keyof typeof imageMap]} />
+          <Image alt="product_screenshot" className="shadow-xl rounded-lg" src={imageMap[click as keyof typeof imageMap]} width={800} height={600} />
           <div className="font-serif text-2xl mt-20">
             {contentMapLeft[click as keyof typeof contentMapLeft]}
           </div>
