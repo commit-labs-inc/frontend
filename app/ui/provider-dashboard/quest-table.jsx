@@ -1,27 +1,23 @@
+import { RectangleStackIcon } from "@heroicons/react/24/outline";
+
 const quests = [
   {
     name: "Ph.D. position in BME",
     deadline: "xx.xx.xxxx",
     details: "Link to quest",
     status: "Open",
-    image:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
   },
   {
     name: "Ph.D. position in BME",
     deadline: "xx.xx.xxxx",
     details: "Link to quest",
     status: "Full",
-    image:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
   },
   {
     name: "Ph.D. position in BME",
     deadline: "xx.xx.xxxx",
     details: "Link to quest",
     status: "Closed",
-    image:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
   },
   // More people...
 ];
@@ -70,11 +66,7 @@ export function QuestTable() {
                     <td className="whitespace-nowrap py-5 pl-4 pr-3 text-sm sm:pl-0">
                       <div className="flex items-center">
                         <div className="h-11 w-11 flex-shrink-0">
-                          <img
-                            className="h-11 w-11 rounded-full"
-                            src={quest.image}
-                            alt=""
-                          />
+                          <RectangleStackIcon />
                         </div>
                         <div className="ml-4">
                           <div className="font-medium text-gray-900">

@@ -43,7 +43,7 @@ export default function Page() {
               </div>
               <div>
                 <label htmlFor="institution" className="sr-only">
-                  Your Institution's Name
+                  Your Institution Name
                 </label>
                 <input
                   id="institution"
