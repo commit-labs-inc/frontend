@@ -1,33 +1,14 @@
 import { RectangleStackIcon } from "@heroicons/react/24/outline";
+import { fetchQuest } from "@/app/lib/web3-comm";
 
-const quests = [
-  {
-    name: "Ph.D. position in BME",
-    deadline: "xx.xx.xxxx",
-    details: "Link to quest",
-    status: "Open",
-  },
-  {
-    name: "Ph.D. position in BME",
-    deadline: "xx.xx.xxxx",
-    details: "Link to quest",
-    status: "Full",
-  },
-  {
-    name: "Ph.D. position in BME",
-    deadline: "xx.xx.xxxx",
-    details: "Link to quest",
-    status: "Closed",
-  },
-  // More people...
-];
-
-export function QuestTable() {
+export async function QuestTable({filter}) {
   const statusStyles = {
     open: "bg-blue-50 text-blue-700 ring-blue-600/20",
     full: "bg-yellow-50 text-yellow-700 ring-yellow-600/20",
     closed: "bg-green-50 text-green-700 ring-green-600/20",
   };
+
+  const quests = await fetchQuest(filter);
 
   return (
     <div className="px-4 sm:px-6 lg:px-8 mt-8">
@@ -89,6 +70,14 @@ export function QuestTable() {
                       >
                         {quest.status}
                       </span>
+                    </td>
+                    <td className="relative whitespace-nowrap py-5 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
+                      <a
+                        href="/provider-dashboard/home/quest-details"
+                        className="text-indigo-600 hover:text-indigo-900"
+                      >
+                        Details<span className="sr-only">, {quest.name}</span>
+                      </a>
                     </td>
                     <td className="relative whitespace-nowrap py-5 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
                       <a

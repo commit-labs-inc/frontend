@@ -1,16 +1,28 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
 import { HomeIcon, PaperAirplaneIcon, UserCircleIcon } from "@heroicons/react/24/outline";
 
-const navigation = [
-  { name: "Home", href: "#", icon: HomeIcon, count: "5", current: true },
-  { name: "Publish", href: "#", icon: PaperAirplaneIcon, current: false },
+const initialNavigation = [
+  { name: "Home", href: "/provider-dashboard/home", icon: HomeIcon, count: "5", current: true },
+  { name: "Publish", href: "/provider-dashboard/publish", icon: PaperAirplaneIcon, current: false },
 ];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export function SideNav() {
+export function SideNav(itemName) {
+  const [navigation, setNavigation] = useState(initialNavigation);
+
+  const clickHandler = () => {
+    const updatedNavigation = navigation.map((item) => ({
+      ...item,
+      current: item.name === itemName,
+    }));
+    setNavigation(updatedNavigation);
+  }
+  
   return (
     <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6">
       <nav className="flex flex-1 flex-col">
@@ -37,6 +49,9 @@ export function SideNav() {
                         : "text-gray-700 hover:text-indigo-600 hover:bg-gray-50",
                       "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                     )}
+                    onClick={() => {
+                      clickHandler(item.name);
+                    }}
                   >
                     <item.icon
                       className={classNames(
