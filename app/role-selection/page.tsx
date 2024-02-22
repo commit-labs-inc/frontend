@@ -11,7 +11,7 @@ export default function Page() {
           Choose Your Role To Start
         </div>
         <div className="flex space-x-12 mt-20">
-          <Link href="/marketplace/quests">
+          <Link href="/seeker-dashboard/home">
             <RoleCard
               imageSrc="/seeker_role_card.png"
               cardName="Opportunity Seeker"

@@ -36,7 +36,7 @@ export async function QuestGrid({filter}: {filter: string}) {
             <div className="-mt-px flex divide-x divide-gray-200">
               <div className="flex w-0 flex-1">
                 <a
-                  href="#"
+                  href="/seeker-dashboard/home/quest-details"
                   className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
                 >
                   <BookOpenIcon
@@ -44,18 +44,6 @@ export async function QuestGrid({filter}: {filter: string}) {
                     aria-hidden="true"
                   />
                   Details
-                </a>
-              </div>
-              <div className="-ml-px flex w-0 flex-1">
-                <a
-                  href="#"
-                  className="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
-                >
-                  <CircleStackIcon
-                    className="h-5 w-5 text-gray-400"
-                    aria-hidden="true"
-                  />
-                  Commit
                 </a>
               </div>
             </div>

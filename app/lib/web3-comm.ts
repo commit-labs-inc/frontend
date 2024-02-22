@@ -133,3 +133,75 @@ export async function fetchForQuestCard(filter: string) {
     return topQuests;
   }
 }
+
+export async function fetchSeekerQuests(filter: string) {
+  const allQuests = [
+    {
+      name: "The algorithmic labyrinth",
+      publisher: "Prof.Y - Duke University",
+      type: "Base Tier",
+      deadline: "xx.xx.xxxx",
+      status: "Committed",
+      gradings: "",
+    },
+    {
+      name: "Cybersecurity Showdown",
+      publisher: "Prof.Y - Duke University",
+      type: "Mid Tier",
+      deadline: "xx.xx.xxxx",
+      status: "Submitted",
+      gradings: "",
+    },
+    {
+      name: "AI Symphony Composer",
+      publisher: "Prof.Y - Duke University",
+      type: "Top Tier",
+      deadline: "xx.xx.xxxx",
+      status: "Graded",
+      gradings: "Accepted",
+    },
+  ];
+
+  const committedQuests = [
+    {
+      name: "The algorithmic labyrinth",
+      publisher: "Prof.Y - Duke University",
+      type: "Base Tier",
+      deadline: "xx.xx.xxxx",
+      status: "Committed",
+      gradings: "",
+    },
+  ];
+
+  const submittedQuests = [
+    {
+      name: "Cybersecurity Showdown",
+      publisher: "Prof.Y - Duke University",
+      type: "Mid Tier",
+      deadline: "xx.xx.xxxx",
+      status: "Submitted",
+      gradings: "",
+    },
+  ];
+
+  const gradedQuests = [
+    {
+      name: "AI Symphony Composer",
+      publisher: "Prof.Y - Duke University",
+      type: "Top Tier",
+      deadline: "xx.xx.xxxx",
+      status: "Graded",
+      gradings: "Accepted",
+    },
+  ];
+
+  if (filter === "All") {
+    return allQuests;
+  } else if (filter === "Committed") {
+    return committedQuests;
+  } else if (filter === "Submitted") {
+    return submittedQuests;
+  } else {
+    return gradedQuests;
+  }
+}
