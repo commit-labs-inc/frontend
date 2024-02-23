@@ -7,6 +7,7 @@ import {
   ClipboardDocumentCheckIcon,
   PaintBrushIcon,
   TrophyIcon,
+  BookmarkIcon,
 } from "@heroicons/react/24/outline";
 
 const initialNavigation = [
@@ -25,8 +26,14 @@ const initialNavigation = [
   },
   {
     name: "Auth Sharing",
-    href: "#",
+    href: "/seeker-dashboard/auth-sharing",
     icon: ClipboardDocumentCheckIcon,
+    current: false,
+  },
+  {
+    name: "My Stories",
+    href: "/seeker-dashboard/my-stories",
+    icon: BookmarkIcon,
     current: false,
   },
   {
