@@ -4,9 +4,12 @@ import {
 } from "@polkadot/extension-inject/types";
 import { useEffect, useState } from "react";
 import { documentReadyPromise } from "@/app/lib/utils";
+import { GearApi, VaraApiV1010 } from "@gear-js/api";
 
 export interface UsePolkadotExtensionReturnType {
-  isReady: boolean;
+  isWalletReady: boolean;
+  isGearReady: boolean;
+  gearApi: GearApi | null;
   accounts: InjectedAccountWithMeta[] | null;
   error: Error | null;
   injector: InjectedExtension | null;
@@ -15,7 +18,9 @@ export interface UsePolkadotExtensionReturnType {
 }
 
 export const usePolkadotExtension = (): UsePolkadotExtensionReturnType => {
-  const [isReady, setIsReady] = useState(false);
+  const [isWalletReady, setIsWalletReady] = useState(false);
+  const [isGearReady, setIsGearReady] = useState(false);
+  const [gearApi, setGearApi] = useState<GearApi | null>(null);
   const [accounts, setAccounts] = useState<InjectedAccountWithMeta[] | null>(
     null
   );
@@ -35,7 +40,7 @@ export const usePolkadotExtension = (): UsePolkadotExtensionReturnType => {
       const { web3AccountsSubscribe, web3Enable } = extensionDapp;
 
       const injectedPromise = documentReadyPromise(() =>
-        web3Enable("Polkadot Tokengated Website Demo")
+        web3Enable("Gear Demo")
       );
       const extensions = await injectedPromise;
 
@@ -46,7 +51,7 @@ export const usePolkadotExtension = (): UsePolkadotExtensionReturnType => {
       }
 
       if (accounts) {
-        setIsReady(true);
+        setIsWalletReady(true);
       } else {
         let unsubscribe: () => void;
 
@@ -60,10 +65,10 @@ export const usePolkadotExtension = (): UsePolkadotExtensionReturnType => {
       }
     };
 
-    if (!isReady) {
+    if (!isWalletReady) {
       extensionSetup();
     }
-  }, [extensions, accounts, isReady]);
+  }, [extensions, accounts, isWalletReady]);
 
   useEffect(() => {
     // This effect is used to get the injector from the selected account
@@ -87,11 +92,28 @@ export const usePolkadotExtension = (): UsePolkadotExtensionReturnType => {
     getInjector();
   }, [actingAccountIdx, accounts]);
 
+  useEffect(() => {
+    // This effect is used to get the gearApi
+    const getGearApi = async () => {
+      const gearApi = await VaraApiV1010.create({
+        providerAddress: "wss://testnet.vara.network",
+      });
+      if (gearApi) {
+        setGearApi(gearApi);
+        setIsGearReady(true);
+      }
+    };
+
+    getGearApi();
+  }, []);
+
   return {
     accounts,
     actingAccount,
     setActingAccountIdx,
-    isReady,
+    isWalletReady,
+    isGearReady,
+    gearApi,
     error,
     injector,
   };

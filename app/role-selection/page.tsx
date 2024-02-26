@@ -3,6 +3,7 @@ import { Header } from "@/app/ui/landing/header";
 import Link from "next/link";
 
 export default function Page() {
+
   return (
     <>
       <Header />

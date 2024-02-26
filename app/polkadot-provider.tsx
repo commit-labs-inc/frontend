@@ -9,7 +9,9 @@ import {
 const PolkadotExtensionContext = createContext<UsePolkadotExtensionReturnType>({
   accounts: [],
   error: null,
-  isReady: false,
+  isGearReady: false,
+  gearApi: null,
+  isWalletReady: false,
   actingAccount: null,
   injector: null,
   setActingAccountIdx: () => {},

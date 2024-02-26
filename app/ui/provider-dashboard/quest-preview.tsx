@@ -5,6 +5,7 @@ import {
 } from "@heroicons/react/20/solid";
 
 export function QuestPreview() {
+
   const previewData = {
     institution: "[University/Institute Name]",
     publisher: "Dr. [Your Name], Professor of Biotechnology",
@@ -22,7 +23,9 @@ export function QuestPreview() {
       <div className="flex flex-col items-center justify-between border-b pb-4">
         <div className="flex space-x-4 items-center">
           <h1 className="text-xl font-bold">Quest for biotechnology!</h1>
-          <button className="bg-black hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+          <button
+            className="bg-black hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
+         >
             Publish
           </button>
         </div>

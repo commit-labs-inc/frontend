@@ -13,6 +13,7 @@ import {
 export default function Page() {
   const [clicked, setClicked] = useState("manual");
   const [preview, setPreview] = useState(false);
+
   const clickHandler = (btnName: string) => {
     setClicked(btnName);
   };
