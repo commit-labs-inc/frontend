@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { secFont } from "@/app/ui/fonts";
 import "./globals.css";
+import { PolkadotExtensionContextProvider } from "@/app/polkadot-provider";
 
 
 export const metadata: Metadata = {
@@ -15,7 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={secFont.className}>{children}</body>
+      <body className={secFont.className}>
+        <PolkadotExtensionContextProvider>{children}</PolkadotExtensionContextProvider>
+      </body>
     </html>
   );
 }

@@ -1,5 +1,5 @@
 import { SideNav } from "@/app/ui/provider-dashboard/side-nav.jsx";
-import { Header } from "@/app/ui/landing/header";
+import { Header } from "../ui/provider-dashboard/header";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

@@ -1,5 +1,8 @@
+"use client";
+
 import { TextButton } from "@/app/ui/button";
 import Image from "next/image";
+import AccountSelector from "../account-select";
 
 export function Header() {
 
@@ -29,6 +32,7 @@ export function Header() {
         >
           <TextButton className="font-mono">Contact Us</TextButton>
         </a>
+        <AccountSelector />
       </div>
     </header>
   );
