@@ -1,3 +1,5 @@
+"use client";
+
 import RoleCard from "@/app/ui/role-selection/role-card";
 import { Header } from "@/app/ui/landing/header";
 import Link from "next/link";

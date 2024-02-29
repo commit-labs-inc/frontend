@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { QuestPreview } from "@/app/ui/provider-dashboard/quest-preview";
 

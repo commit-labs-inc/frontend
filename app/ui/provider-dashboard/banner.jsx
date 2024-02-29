@@ -1,3 +1,5 @@
+"use client";
+
 export function Banner({ title, subtitle}) {
   return (
     <div className="flex items-center justify-between gap-x-6 bg-gray-900 px-6 py-2.5 sm:pr-3.5 lg:pl-8">

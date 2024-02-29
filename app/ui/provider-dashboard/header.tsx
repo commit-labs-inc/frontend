@@ -2,7 +2,7 @@
 
 import { TextButton } from "@/app/ui/button";
 import Image from "next/image";
-import AccountSelector from "../account-select";
+import { Wallet } from "../gear-wallet/wallet/wallet/Wallet";
 
 export function Header() {
 
@@ -32,8 +32,8 @@ export function Header() {
         >
           <TextButton className="font-mono">Contact Us</TextButton>
         </a>
-        <AccountSelector />
       </div>
+      <Wallet />
     </header>
   );
 }

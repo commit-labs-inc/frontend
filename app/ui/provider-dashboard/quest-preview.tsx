@@ -1,10 +1,44 @@
+"use client";
+
 import {
   PaperClipIcon,
   UserIcon,
   CalendarIcon,
 } from "@heroicons/react/20/solid";
+import { useSendQuestMessage } from "@/app/lib/hooks/api";
+import { useAccount } from "@gear-js/react-hooks";
 
 export function QuestPreview() {
+  const sendQuestMessage = useSendQuestMessage();
+  const { accounts } = useAccount();
+
+  const handlePublish = () => {
+    console.log(accounts);
+    sendQuestMessage({
+      publish: {
+        questType: "BaseTier",
+        questInfo: {
+          institutionName: "fake institution",
+          questName: "fake quest",
+          description: "fake description",
+          deliverables: "fake deliverables",
+          capacity: 32,
+          skillTokenName: "Python",
+          deadline: 5000000,
+          openTry: false,
+          providerName: "fake provider",
+          contactInfo: "fake contact",
+          freeGradings: 10,
+          hiringFor: "something",
+          skillTags: "Python",
+          reputationNft: "None",
+          prize: "",
+          applicationDeadline: 0,
+          dedicatedTo: null,
+        },
+      },
+    });
+  };
 
   const previewData = {
     institution: "[University/Institute Name]",
@@ -25,7 +59,8 @@ export function QuestPreview() {
           <h1 className="text-xl font-bold">Quest for biotechnology!</h1>
           <button
             className="bg-black hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
-         >
+            onClick={handlePublish}
+          >
             Publish
           </button>
         </div>

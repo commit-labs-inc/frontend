@@ -1,3 +1,5 @@
+"use client";
+
 import { SideNav } from "@/app/ui/provider-dashboard/side-nav.jsx";
 import { Header } from "../ui/provider-dashboard/header";
 

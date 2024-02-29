@@ -1,14 +1,14 @@
 import { RectangleStackIcon } from "@heroicons/react/24/outline";
 import { fetchQuest } from "@/app/lib/web3-comm";
 
-export async function QuestTable({filter}) {
+export function QuestTable({filter}) {
   const statusStyles = {
     open: "bg-blue-50 text-blue-700 ring-blue-600/20",
     full: "bg-yellow-50 text-yellow-700 ring-yellow-600/20",
     closed: "bg-green-50 text-green-700 ring-green-600/20",
   };
 
-  const quests = await fetchQuest(filter);
+  const quests = fetchQuest(filter);
 
   return (
     <div className="px-4 sm:px-6 lg:px-8 mt-8">

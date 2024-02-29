@@ -8,3 +8,11 @@ export function documentReadyPromise<T>(creator: () => Promise<T>): Promise<T> {
     }
   });
 }
+
+export function copyToClipboard(value: string) {
+  navigator.clipboard.writeText(value).then(() => console.log("Copied!"));
+}
+
+export const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+  navigator.userAgent,
+);
