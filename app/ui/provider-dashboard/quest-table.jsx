@@ -1,3 +1,5 @@
+"use client";
+
 import { RectangleStackIcon } from "@heroicons/react/24/outline";
 import { fetchQuest } from "@/app/lib/web3-comm";
 

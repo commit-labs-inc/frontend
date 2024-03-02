@@ -1,7 +1,6 @@
 // This file is for web3 communication functions
 // e.g. connect to blockchain, get wallet address, and all functions exposed through the contracts' state functions.
 
-
 export function fetchQuest(filter: string) {
   const allQuests = [
     {
@@ -63,7 +62,7 @@ export function fetchQuest(filter: string) {
   }
 }
 
-export async function fetchForQuestCard(filter: string) {
+export function fetchForQuestCard(filter: string) {
   const allQuests = [
     {
       tier: "Base Tier",

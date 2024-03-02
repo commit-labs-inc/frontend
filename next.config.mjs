@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   webpack(config) {
+    config.resolve.extensions.push(".wasm");
     config.module.rules.push({
       test: /\.js$/,
       exclude: /node_modules/,
@@ -18,6 +19,21 @@ const nextConfig = {
     config.module.rules.push({
       test: /\.svg$/,
       use: ["@svgr/webpack", "url-loader"],
+    });
+
+    // Add a rule for .wasm files
+    config.module.rules.push({
+      test: /\.wasm$/,
+      type: "javascript/auto",
+      use: [
+        {
+          loader: "file-loader",
+          options: {
+            publicPath: "public",
+            name: "[name].[ext]",
+          },
+        },
+      ],
     });
     return config;
   },

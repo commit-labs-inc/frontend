@@ -3,14 +3,7 @@ import { Banner } from "@/app/ui/quest-marketplace/banner";
 import { ButtonGroup } from "@/app/ui/quest-marketplace/button-group";
 import { QuestGrid } from "@/app/ui/quest-marketplace/quest-grid";
 
-export default async function Page({
-  searchParams,
-}: {
-  searchParams?: {
-    filter?: string;
-  };
-}) {
-  const filter = searchParams?.filter || "All";
+export default function Page() {
 
   return (
     <div className="flex flex-col">
@@ -18,7 +11,7 @@ export default async function Page({
       <Banner title="World of Quests" />
       <ButtonGroup />
       <div className="p-20">
-        <QuestGrid filter={filter} />
+        <QuestGrid filter={"All"} />
       </div>
     </div>
   );

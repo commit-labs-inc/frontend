@@ -1,5 +1,3 @@
-"use client";
-
 import { Banner } from "@/app/ui/provider-dashboard/banner.jsx";
 import { Stats } from "@/app/ui/provider-dashboard/stats.jsx";
 import { QuestTable } from "@/app/ui/provider-dashboard/quest-table.jsx";

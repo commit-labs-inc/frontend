@@ -1,9 +1,16 @@
+"use client";
+
 import { BookOpenIcon, CircleStackIcon } from "@heroicons/react/20/solid";
 import { Banner } from "../provider-dashboard/banner";
 import { fetchForQuestCard } from "@/app/lib/web3-comm";
+import { useReadQuestState } from "@/app/lib/hooks/api";
 
-export async function QuestGrid({filter}: {filter: string}) {
-    const quests = await fetchForQuestCard(filter);
+export function QuestGrid({filter}: {filter: string}) {
+    const quests = fetchForQuestCard(filter);
+
+    const handleDetails = (questId: string) => {
+      console.log(useReadQuestState(questId));
+    }
 
   return (
     <ul
@@ -38,6 +45,7 @@ export async function QuestGrid({filter}: {filter: string}) {
                 <a
                   href="/seeker-dashboard/home/quest-details"
                   className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
+                  onClick={() => handleDetails("1709350233000")}
                 >
                   <BookOpenIcon
                     className="h-5 w-5 text-gray-400"
